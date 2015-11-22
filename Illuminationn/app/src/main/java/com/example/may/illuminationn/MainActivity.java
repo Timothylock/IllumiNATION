@@ -1,12 +1,14 @@
 package com.example.may.illuminationn;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import java.io.InputStream;
 import java.net.URL;
@@ -26,6 +28,10 @@ public class MainActivity extends AppCompatActivity {
                 new Button.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        EditText rowNum = (EditText) findViewById(R.id.text_field);
+                        Intent intent = new Intent();
+                        intent.putExtra("RowNumber", rowNum.getText().toString());
+                        startActivity(intent);
                         startActivity(new Intent(MainActivity.this, Connected.class));
                     }
                 }
@@ -53,6 +59,4 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-
 }

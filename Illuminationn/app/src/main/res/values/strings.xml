@@ -7,6 +7,4 @@
     <string name="button_field">connect</string>
     <string name="text_field">Please enter your row number</string>
 
-    <color name="actionbar_background">#303f9f</color>
-    <color name="actionbar_text">#ffffff</color>
 </resources>

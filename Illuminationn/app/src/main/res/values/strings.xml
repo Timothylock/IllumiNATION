@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Illuminationn</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_connected">Connected</string>
+    <string name="button_field">connect</string>
+
+</resources>

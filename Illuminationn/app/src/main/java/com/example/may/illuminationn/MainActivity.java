@@ -8,6 +8,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import java.io.InputStream;
+import java.net.URL;
+import java.net.URLConnection;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -48,5 +52,16 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private InputStream getStream(String url) {
+        try {
+            URL url1 = new URL(url);
+            URLConnection urlConnection = url1.openConnection();
+            urlConnection.setConnectTimeout(1000);
+            return urlConnection.getInputStream();
+        } catch (Exception ex) {
+            return null;
+        }
     }
 }

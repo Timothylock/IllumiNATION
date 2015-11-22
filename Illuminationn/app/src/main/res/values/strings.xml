@@ -6,5 +6,6 @@
     <string name="title_activity_connected">Connected</string>
     <string name="button_field">connect</string>
     <string name="text_field">Please enter your row number</string>
+    <string name="title_field">Illuminationn</string>
 
 </resources>

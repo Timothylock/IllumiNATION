@@ -35,6 +35,7 @@ public class AsynTaskParseJson extends AsyncTask<String, String, String> {
             // get json string from url
             JSONObject json = jParser.getJSONFromUrl(yourJsonStringUrl);
             Connected.thing = (json.get("data").toString());
+            Connected.time = (json.get("time").toString());
             return (json.get("data").toString());
 
         } catch (JSONException e) {

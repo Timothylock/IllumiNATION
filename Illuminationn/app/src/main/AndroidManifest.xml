@@ -19,7 +19,7 @@
         <activity
             android:name=".Connected"
             android:label="@string/title_activity_connected"
-            android:theme="@style/CustomActionBarTheme">
+            android:theme="@style/AppTheme">
         </activity>
     </application>
 

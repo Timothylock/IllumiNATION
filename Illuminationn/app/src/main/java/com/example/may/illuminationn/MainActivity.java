@@ -31,8 +31,8 @@ public class MainActivity extends AppCompatActivity {
                         EditText rowNum = (EditText) findViewById(R.id.text_field);
                         Intent intent = new Intent();
                         intent.putExtra("RowNumber", rowNum.getText().toString());
-                        startActivity(intent);
-                        startActivity(new Intent(MainActivity.this, Connected.class));
+                        //startActivity(intent);
+                        startActivity((new Intent(MainActivity.this, Connected.class)).putExtra("RowNumber", rowNum.getText().toString()));
                     }
                 }
         );

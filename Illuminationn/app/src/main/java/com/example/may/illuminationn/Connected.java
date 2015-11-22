@@ -39,26 +39,18 @@ public class Connected extends AppCompatActivity {
 
         Intent intent = getIntent();
         row = intent.getStringExtra("RowNumber");
-        getWindow().getDecorView().setBackgroundColor(Color.parseColor(getColor(row)));
+        TextView t = (TextView)findViewById(R.id.textView);
 
-//        while (true){
-//            new AsynTaskParseJson().execute();
-//            try {
-//                Thread.sleep(1000);
-//            } catch (InterruptedException e) {
-//                // TODO Auto-generated catch block
-//                e.printStackTrace();
-//            }
-//            System.out.println("===========================");
-//
-//            System.out.println(thing);
-//            try {
-//                Thread.sleep(100000);
-//            } catch (InterruptedException e) {
-//                // TODO Auto-generated catch block
-//                e.printStackTrace();
-//            }
-//        }
+        getWindow().getDecorView().setBackgroundColor(Color.parseColor("#000000"));
+
+        getInstructions();
+        try {
+            JSONObject responseJSON = new JSONObject(thing);
+            t.setText(responseJSON.get("r" + row).toString());
+
+        } catch (JSONException e) {
+            t.setText("Could not obtain data. Wrong row?");
+        }
 
 
     }
@@ -88,28 +80,17 @@ public class Connected extends AppCompatActivity {
 
 
     public void setColor(View view) {
-        String color = getColor(row);
-        view.setBackgroundColor(Color.parseColor(color));
+        //String color = getColor(row);
+        //getWindow().getDecorView().setBackgroundColor(Color.parseColor("#008000"));
     }
 
-    // check from the file, se
-    public String getColor(String rowNum){
+    // check from the file
+    public void getInstructions(){
         new AsynTaskParseJson().execute();
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        // this line breaks the code, do not include.
-        //   System.out.println(thing);
-
-        // assume AsynTaskParseJson works, the program can now execute as expected
-        // and thing should have already been parsed
-
-        String color = null;
-        //TODO
-        // go through the parsed map, get corresponding color according to rowNum.
-        
-        return color;
     }
 }

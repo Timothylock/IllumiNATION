@@ -25,7 +25,7 @@ public class Connected extends AppCompatActivity {
         getWindow().getDecorView().setBackgroundColor(1762331);
 
         while (true){
-            System.out.println("bam bam");
+            System.out.println(getStream("http://timothylock.ca/data.json"));
         }
 
     }
@@ -62,8 +62,5 @@ public class Connected extends AppCompatActivity {
             return null;
         }
     }
-    // TODO
-    public int getColor(int color){
-        return color;
-    }
+
 }

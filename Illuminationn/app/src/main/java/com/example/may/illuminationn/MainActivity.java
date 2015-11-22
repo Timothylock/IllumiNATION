@@ -54,14 +54,5 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private InputStream getStream(String url) {
-        try {
-            URL url1 = new URL(url);
-            URLConnection urlConnection = url1.openConnection();
-            urlConnection.setConnectTimeout(1000);
-            return urlConnection.getInputStream();
-        } catch (Exception ex) {
-            return null;
-        }
-    }
+
 }

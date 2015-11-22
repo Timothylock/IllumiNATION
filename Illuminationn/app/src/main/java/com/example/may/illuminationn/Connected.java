@@ -11,6 +11,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import java.io.InputStream;
+import java.net.URL;
+import java.net.URLConnection;
+
 public class Connected extends AppCompatActivity {
 
     @Override
@@ -19,6 +23,11 @@ public class Connected extends AppCompatActivity {
 
         setContentView(R.layout.activity_connected);
         getWindow().getDecorView().setBackgroundColor(1762331);
+
+        while (true){
+            System.out.println("bam bam");
+        }
+
     }
 
     @Override
@@ -43,6 +52,16 @@ public class Connected extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    private InputStream getStream(String url) {
+        try {
+            URL url1 = new URL(url);
+            URLConnection urlConnection = url1.openConnection();
+            urlConnection.setConnectTimeout(1000);
+            return urlConnection.getInputStream();
+        } catch (Exception ex) {
+            return null;
+        }
+    }
     // TODO
     public int getColor(int color){
         return color;
